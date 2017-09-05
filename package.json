@@ -1,0 +1,24 @@
+{
+  "name": "nutritionvalue-searchall",
+  "version": "0.0.2",
+  "description": "Get JSON Nutrient Data from NutritionValue.org.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfram77/cmd-nutritionvaluesearchall.git"
+  },
+  "keywords": [
+    "nutritionvalue",
+    "search",
+    "all"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolfram77/cmd-nutritionvaluesearchall/issues"
+  },
+  "homepage": "https://github.com/wolfram77/cmd-nutritionvaluesearchall#readme"
+}
