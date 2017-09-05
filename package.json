@@ -1,10 +1,13 @@
 {
   "name": "nutritionvalue-searchall",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Get JSON Nutrient Data from NutritionValue.org.",
   "main": "index.js",
   "scripts": {
     "test": "exit"
+  },
+  "bin": {
+    "nutritionvalue-searchall": "index.js"
   },
   "repository": {
     "type": "git",
