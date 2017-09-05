@@ -47,10 +47,10 @@ const $ = function(id) {
     const tables = document.getElementsByTagName('table');
     if(tables.length<3) return fres({});
     const trs = tables[2].getElementsByTagName('tr');
-    const get = (key, path) => nutritionalValue(path).then((ans) => a[key] = ans);
+    const fetch = (key, path) => nutritionalValue(path).then((ans) => a[key] = ans);
     for(var tr of _slice.call(trs, 1, -1)) {
       var i = info(tr.getElementsByTagName('td')[0]);
-      pro.push(get(i.value, i.href));
+      pro.push(fetch(i.value, i.href));
     }
     return Promise.all(pro).then(() => a);
   });
