@@ -10,7 +10,8 @@ function text(el) {
   return el.children[0].textContent;
 };
 
-const info = function(td) {
+function info(td) {
+  // 1. get inner anchor href and content
   const a = td.getElementsByTagName('a')[0];
   return {'href': a.getAttribute('href'), 'value': a.textContent};
 };
