@@ -20,7 +20,7 @@ nutritionvalue-searchall 1001 1100 20
 ```javascript
 // using as a javascript module
 var searchall = require('nutritionvalue-searchall');
-// serachall(<page>)
+// searchall(<page>)
 
 searchall(1001).then((ans) => console.log(ans));
 // {"Butter, salted": { ... }}```
