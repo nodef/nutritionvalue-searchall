@@ -16,7 +16,8 @@ function info(td) {
   return {'href': a.getAttribute('href'), 'value': a.textContent};
 };
 
-const request = function(path) {
+function request(path) {
+  // 1. make request with user-agent
   return jsdom.JSDOM.fromURL(`https://www.nutritionvalue.org${path}`, {
     'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
   });
