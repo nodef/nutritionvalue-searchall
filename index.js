@@ -4,7 +4,8 @@ const jsdom = require('jsdom');
 const _assign = require('lodash.assign');
 const _slice = Array.prototype.slice;
 
-const text = function(el) {
+function text(el) {
+  // 1. get text content of an element
   if(!el.children.length) return el.textContent;
   return el.children[0].textContent;
 };
