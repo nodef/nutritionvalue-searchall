@@ -44,6 +44,16 @@ function nutritionalValue(path) {
 };
 
 const $ = function(id) {
+  return request(`/comparefoods.php?first=${id}&second=${id}`).then((dom) => {
+    const document = dom.window.document;
+    const a = document.querySelector('td.comp.right a');
+    return !a.textContent? {} : request(a.href).then((dom) => {
+
+    });
+  });
+};
+
+const $ = function(id) {
   return request(`/search.php?food_query=&page=${id}`).then((dom) => {
     const a = {}, pro = [], document = dom.window.document;
     const tables = document.getElementsByTagName('table');
