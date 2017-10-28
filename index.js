@@ -28,21 +28,23 @@ const $ = function(id) {
     const document = dom.window.document;
     const a = document.querySelector('td.comp.right a');
     return !a.textContent? {} : request(a.href).then((dom) => {
-      const a = {}, document = dom.window.document;
+      const a = {}, b = {}, document = dom.window.document;
+      const key = document.querySelector('h1').textContent;
       var tables = document.getElementsByTagName('table');
       var trs = tables[2].getElementsByClassName('noprint');
       for (var i=1; i<=2; i++) {
         var tds = trs[i].getElementsByTagName('td');
-        a[text(tds[0])] = text(tds[2]);
+        b[text(tds[0])] = text(tds[2]);
       }
       tables = document.getElementsByClassName('nutrient');
       for(var table of tables) {
         trs = table.getElementsByTagName('tr');
         for(var tr of _slice.call(trs, table===tables[4]? 3 : 2)) {
           var tds = tr.getElementsByTagName('td');
-          a[text(tds[0])] = text(tds[1]);
+          b[text(tds[0])] = text(tds[1]);
         }
       }
+      a[key] = b;
       return a;
     });
   });
