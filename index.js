@@ -47,8 +47,8 @@ module.exports = $;
 
 if(require.main===module) {
   const z = {}, a = process.argv;
-  const start = parseInt(a[2])||0, stop = parseInt(a[3])||start+1;
-  const step = parseInt(a[4])||8, inc = Math.sign(step);
+  const start = parseInt(a[2], 10)||0, stop = parseInt(a[3], 10)||start+1;
+  const step = parseInt(a[4], 10)||8, inc = Math.sign(step);
   const fetch = (id) => pro.then(() => $(id)).then((ans) => Object.assign(z, ans));
   for(var i=start, pro = Promise.resolve(); i!==stop;) {
     for(var I=Math.min(stop, i+step), p=[]; i!==I; i+=inc)
