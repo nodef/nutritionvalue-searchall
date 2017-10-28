@@ -9,12 +9,6 @@ function text(el) {
   return el.children[0].textContent;
 };
 
-function info(td) {
-  // 1. get inner anchor href and content
-  const a = td.getElementsByTagName('a')[0];
-  return {'href': a.getAttribute('href'), 'value': a.textContent};
-};
-
 function request(path) {
   // 1. make request with user-agent
   const root = 'https://www.nutritionvalue.org';
