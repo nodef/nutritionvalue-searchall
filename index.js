@@ -23,33 +23,27 @@ function request(path) {
   });
 };
 
-function nutritionalValue(path) {
-  return request(path).then((dom) => {
-    const a = {}, document = dom.window.document;
-    var tables = document.getElementsByTagName('table');
-    var trs = tables[2].getElementsByClassName('noprint');
-    for (var i=1; i<=2; i++) {
-      var tds = trs[i].getElementsByTagName('td');
-      a[text(tds[0])] = text(tds[2]);
-    }
-    tables = document.getElementsByClassName('nutrient');
-    for(var table of tables) {
-      trs = table.getElementsByTagName('tr');
-      for(var tr of _slice.call(trs, table===tables[4]? 3 : 2)) {
-        var tds = tr.getElementsByTagName('td');
-        a[text(tds[0])] = text(tds[1]);
-      }
-    }
-    return a;
-  });
-};
-
 const $ = function(id) {
   return request(`/comparefoods.php?first=${id}&second=${id}`).then((dom) => {
     const document = dom.window.document;
     const a = document.querySelector('td.comp.right a');
     return !a.textContent? {} : request(a.href).then((dom) => {
-
+      const a = {}, document = dom.window.document;
+      var tables = document.getElementsByTagName('table');
+      var trs = tables[2].getElementsByClassName('noprint');
+      for (var i=1; i<=2; i++) {
+        var tds = trs[i].getElementsByTagName('td');
+        a[text(tds[0])] = text(tds[2]);
+      }
+      tables = document.getElementsByClassName('nutrient');
+      for(var table of tables) {
+        trs = table.getElementsByTagName('tr');
+        for(var tr of _slice.call(trs, table===tables[4]? 3 : 2)) {
+          var tds = tr.getElementsByTagName('td');
+          a[text(tds[0])] = text(tds[1]);
+        }
+      }
+      return a;
     });
   });
 };
