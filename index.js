@@ -1,7 +1,6 @@
 'use strict';
 const https = require('https');
 const jsdom = require('jsdom');
-const _assign = require('lodash.assign');
 const _slice = Array.prototype.slice;
 
 function text(el) {
@@ -66,7 +65,7 @@ if(require.main===module) {
   const stop = arg.length>3? parseInt(arg[3]) : start+1;
   const step = arg.length>4? parseInt(arg[4]) : 8;
   const inc = Math.sign(step);
-  const fetch = (id) => pro.then(() => $(id)).then((ans) => _assign(a, ans));
+  const fetch = (id) => pro.then(() => $(id)).then((ans) => Object.assign(a, ans));
   for(var i=start, pro = Promise.resolve(); i!==stop;) {
     for(var I=Math.min(stop, i+step), p=[]; i!==I; i+=inc)
       p.push(fetch(i));
