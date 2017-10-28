@@ -41,6 +41,9 @@ const $ = function(id) {
       a[key] = b;
       return a;
     });
+  }, (err) => {
+    const dom = new jsdom.JSDOM(err.error.toString());
+    throw new Error(''+err.statusCode+' - '+dom.window.document.title);
   });
 };
 module.exports = $;
