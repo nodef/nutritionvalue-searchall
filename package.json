@@ -1,6 +1,6 @@
 {
   "name": "nutritionvalue-searchall",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Get JSON Nutrient Data from NutritionValue.org.",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/wolfram77/cmd-nutritionvaluesearchall#readme",
   "dependencies": {
-    "jsdom": "^11.2.0",
-    "lodash.assign": "^4.2.0"
+    "jsdom": "^11.2.0"
   }
 }
