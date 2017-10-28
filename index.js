@@ -23,7 +23,7 @@ function request(path) {
   });
 };
 
-const nutritionalValue = function(path) {
+function nutritionalValue(path) {
   return request(path).then((dom) => {
     const a = {}, document = dom.window.document;
     var tables = document.getElementsByTagName('table');
