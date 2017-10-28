@@ -47,21 +47,6 @@ const $ = function(id) {
     });
   });
 };
-
-const $ = function(id) {
-  return request(`/search.php?food_query=&page=${id}`).then((dom) => {
-    const a = {}, pro = [], document = dom.window.document;
-    const tables = document.getElementsByTagName('table');
-    if(tables.length<3) return fres({});
-    const trs = tables[2].getElementsByTagName('tr');
-    const fetch = (key, path) => nutritionalValue(path).then((ans) => a[key] = ans);
-    for(var tr of _slice.call(trs, 1, -1)) {
-      var i = info(tr.getElementsByTagName('td')[0]);
-      pro.push(fetch(i.value, i.href));
-    }
-    return Promise.all(pro).then(() => a);
-  });
-};
 module.exports = $;
 
 if(require.main===module) {
