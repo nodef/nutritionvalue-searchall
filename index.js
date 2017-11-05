@@ -23,7 +23,7 @@ const $ = function(id) {
     const a = document.querySelector('td.comp.right a');
     return !a.textContent? {} : request(a.href).then((dom) => {
       const a = {}, b = {}, document = dom.window.document;
-      const key = document.querySelector('h1').textContent;
+      b['Name'] = document.querySelector('h1').textContent;
       var tables = document.getElementsByTagName('table');
       var trs = tables[2].getElementsByClassName('noprint');
       for (var i=1; i<=2; i++) {
@@ -38,7 +38,7 @@ const $ = function(id) {
           b[text(tds[0])] = text(tds[1]);
         }
       }
-      a[key] = b;
+      a[id] = b;
       return a;
     });
   }, (err) => {
