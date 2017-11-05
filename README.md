@@ -23,4 +23,4 @@ var searchall = require('nutritionvalue-searchall');
 // searchall(<page>)
 
 searchall(1001).then((ans) => console.log(ans));
-// {"Butter, salted": { ... }}```
+// {"1001":{"Name":"Butter, salted", ... }```
