@@ -1,6 +1,6 @@
 {
   "name": "nutritionvalue-searchall",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Get JSON Nutrient Data from NutritionValue.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wolfram77/cmd-nutritionvaluesearchall.git"
+    "url": "git+https://github.com/nodef/nutritionvalue-searchall.git"
   },
   "keywords": [
     "nutritionvalue",
@@ -22,9 +22,9 @@
   "author": "wolfram77@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wolfram77/cmd-nutritionvaluesearchall/issues"
+    "url": "https://github.com/nodef/nutritionvalue-searchall/issues"
   },
-  "homepage": "https://github.com/wolfram77/cmd-nutritionvaluesearchall#readme",
+  "homepage": "https://github.com/nodef/nutritionvalue-searchall#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "terminal-scrapearange": "^0.1.4"
