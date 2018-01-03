@@ -45,13 +45,14 @@ function bodyParts(z, $, elm, i0) {
 function searchAll(id) {
   return request(`/comparefoods.php?first=${id}&second=${id}`).then((html) => {
     var $ = cheerio.load(html), a = $('td.comp.right a');
-    return !a.text()? {}:request(a.attr('href')).then((html) => {
-      var $ = cheerio.load(html), z = {'Id': id};
-      nameParts(z, $('h1').text(), id);
-      headParts(z, $, $('table')[2]);
-      $('.nutrient').each((i, elm) => bodyParts(z, $, elm, i===4? 3:2));
-      return z;
-    });
+    if(!a.text()) throw new Error('Bad request id');
+    return request(a.attr('href'));
+  }).then((html) => {
+    var $ = cheerio.load(html), z = {'Id': id};
+    nameParts(z, $('h1').text(), id);
+    headParts(z, $, $('table')[2]);
+    $('.nutrient').each((i, elm) => bodyParts(z, $, elm, i===4? 3:2));
+    return z;
   });
 };
 module.exports = searchAll;
