@@ -52,4 +52,5 @@ function searchAll(id) {
     });
   });
 };
-module.exports = $;
+module.exports = searchAll;
+if(require.main===module) scrapeArange.main({method: searchAll});
