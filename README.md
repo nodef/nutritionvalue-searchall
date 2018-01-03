@@ -34,7 +34,7 @@ nutritionvalue-searchall 1001 1100 -o somanyfoods.txt -c 20 -t 512 -r 10 -v
 var searchall = require('nutritionvalue-searchall');
 // searchall(<id>)
 
-searchall(1001).then((ans) => console.log(ans));
+searchall('1001').then((ans) => console.log(ans));
 // {"Id": "1001", "Number": "1001", "Name": "Butter, salted", ...}
 ```
 
