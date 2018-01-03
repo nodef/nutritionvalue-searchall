@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/nutritionvalue-searchall.png)](https://nodei.co/npm/nutritionvalue-searchall/)
 
-Get JSON Nutrient Data from NutritionValue.org.
+Get JSON Nutrient Data from [NutritionValue].
 
 ```bash
 # using as command line application
@@ -20,7 +20,11 @@ nutritionvalue-searchall 1001 1100 20
 ```javascript
 // using as a javascript module
 var searchall = require('nutritionvalue-searchall');
-// searchall(<page>)
+// searchall(<id>)
 
 searchall(1001).then((ans) => console.log(ans));
-// {"1001":{"Name":"Butter, salted", ... }```
+// {"Id": "1001", "Number": "1001", "Name": "Butter, salted", ...}
+```
+
+
+[NutritionValue]: https://www.nutritionvalue.org
