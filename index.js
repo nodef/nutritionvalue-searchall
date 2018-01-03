@@ -5,8 +5,8 @@ const scrapeArange = require('terminal-scrapearange');
 
 function text(elm, $) {
   // 1. get text in element
-  if(!elm.childNodes.length) return $(elm).text();
-  return $(elm.firstChild).text();
+  var chd = $(elm).children();
+  return (chd.length? $(chd[0]).text():$(elm).text()).trim();
 };
 
 function request(path) {
@@ -40,6 +40,8 @@ function bodyParts(z, $, elm, i0) {
   }
 };
 
+
+// I. main function
 function searchAll(id) {
   return request(`/comparefoods.php?first=${id}&second=${id}`).then((html) => {
     var $ = cheerio.load(html), a = $('td.comp.right a');
@@ -53,4 +55,7 @@ function searchAll(id) {
   });
 };
 module.exports = searchAll;
+
+
+// II. command-line
 if(require.main===module) scrapeArange.main({method: searchAll});
