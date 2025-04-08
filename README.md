@@ -40,3 +40,5 @@ searchall('1001').then((ans) => console.log(ans));
 
 
 [NutritionValue]: https://www.nutritionvalue.org
+
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/nutritionvalue-searchall)
